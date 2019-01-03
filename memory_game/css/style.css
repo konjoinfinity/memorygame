@@ -1,0 +1,128 @@
+header{
+  background-color: #F15B31;
+  color: #FFFFFF;
+  padding: 30px 20px 30px 20px;
+}
+
+h1 {
+font-family: "Ubuntu", sans-serif;
+font-weight: 400;
+color: #FFFFFF;
+letter-spacing: 1px;
+font-size: 45px;
+margin: 0;
+}
+
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  color: #0D2C40;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+h3 {
+  font-family: "Ubuntu", sans-serif;
+  color: #0D2C40;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+p {
+font-family: "droid serif";
+line-height: 26px;
+font-size: 18px;
+}
+
+body {
+text-align: center;
+margin: 0;
+}
+
+a {
+  text-decoration: underline;
+  font-family: "Ubuntu", sans-serif;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  style: border-bottom: 2px solid transparent;
+}
+nav{
+  background-color: #00A6B3;
+  color: rgb(255,255,255);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+main{
+  width: 850px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img{
+  margin-top: 40px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+footer{
+text-transform: uppercase;
+padding-right: 20px;
+padding-left: 20px;
+background-color: #0D2C40;
+color: white;
+font-size: 14px;
+letter-spacing: .08em;
+font-weight: 500;
+}
+
+.copyright{
+  float: left;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.message{
+  float: right;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.clearfix:after {
+visibility: hidden;
+display: block;
+content: " ";
+clear: both;
+height: 0;
+font-size: 0;
+}
+
+.name{
+  color: #F15B31;
+  font-weight: 700;
+}
+
+a:hover {
+  border-color: white;
+}
+
+/*Let's add some flair to the word GA in the footer. In your html, you'll notice that it's wrapped with a span that has the class name.
+
+Select .name in your style.css file and give it a color of #F15B31 and a font weight of 700.
+Finally, let's add a hover effect to the anchors in the nav.
+
+In your style.css file, give all anchors the following style: border-bottom: 2px solid transparent;
+
+Then add another, separate rule to style all anchors when the user hovers over them.
+
+When the user hovers over them, change the border color to white.
+
+Bonus:
+
+Use the nav bar items to scroll down to their respected positions on the page.
+*/
