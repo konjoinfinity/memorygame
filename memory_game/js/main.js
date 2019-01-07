@@ -11,24 +11,41 @@
 var cards = ["queen", "king", "queen", "king"]
 
 var cardsInPlay = []
-var cardOne = [cards[0]]
-cardsInPlay.push(cardOne);
-var cardTwo = [cards[1]]
-cardsInPlay.push(cardTwo);
+var cardId = [cards[Math.floor(Math.random() * 4)]]
+cardsInPlay.push(cards[cardId]);
 
-console.log("User flipped queen");
-console.log("User flipped king");
 
-if (cardsInPlay.length === 2) {
-  if (cardsInPlay[0] === cardsInPlay[1]) {
-    alert("You found a match!")
-  }   else {
-      alert("Sorry, try again.")
-    }
+
+var checkForMatch = function() {
+    if (cardsInPlay[0] === cardsInPlay[1]) {
+      console.log("You found a match!")
+    }   else {
+        console.log("Sorry, try again.")
+      }
+  }
+
+var flipCard = function(cardId) {
+  console.log("User flipped" + cards[cardId])
+  if (cardsInPlay.length === 2) {
+    checkForMatch();
+  }
 }
 
+flipCard(0);
 
-/*Now we'll want to add logic that checks for equality between the two cards
+/*Open the memory_game folder in Sublime Text. You'll want to open the
+index.html and main.js files in this folder in Sublime.
+In main.js, create a function to store all steps that should happen when the
+user flips a card.
+In your main.js file, after the lines with the cards and cardsInPlay arrays,
+create a function flipCard.
+The function should accept one parameter: cardId.
+Move all the code that you wrote for the last unit's assignment, except for
+the cards and cardsInPlay arrays into the flipCard function.
+NOTE: We are leaving the two arrays outside of the flipCard function since we
+want to make sure that the two arrays have global scope.
+
+Now we'll want to add logic that checks for equality between the two cards
 in the cardsInPlay array.
 Inside of the if statement you created in the last step, create an if...else
 statement that checks for equality between the two cards in the cardsInPlay array.
