@@ -23,11 +23,11 @@ cardImage: "images/king-of-diamonds.png"
 
 var cardsInPlay = []
 
-var reset = function () {
+function resetCards() {
   for (var i = 0; i < cards.length; i++) {
-    document.getElementsByTagName('img')[i].setAttribute('src', 'images/back.png');
-  }
-  cardsInPlay = [];
+  document.getElementsByTagName('img')[i].setAttribute('src', 'images/back.png');
+}
+cardsInPlay = [];
 };
 
 var createBoard = function() {
@@ -44,13 +44,9 @@ var checkForMatch = function() {
     if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
       console.log("You found a match!");
       alert("You found a match!");
-      this.setAttribute('src' , (cards[cardId].cardImage));
-      reset();
     }   else {
         console.log("Sorry, try again.");
         alert("Sorry, try again.");
-        this.setAttribute('src' , (cards[cardId].cardImage));
-        reset();
       }
   }
 
