@@ -1,13 +1,3 @@
-//console.log("Up and running!");
-
-//var cardOne = "king";
-//var cardTwo = "king";
-//var cardThree = "queen";
-//var cardFour = "queen";
-
-
-//console.log("User flipped " + cardThree);
-
 var cards = [
 {
 rank: "queen",
@@ -32,26 +22,46 @@ cardImage: "images/king-of-diamonds.png"
 ];
 
 var cardsInPlay = []
-var cardId = [cards[Math.floor(Math.random() * 4)]]
-cardsInPlay.push(cards[cardId]);
 
-
-var checkForMatch = function() {
-    if (cardsInPlay[0] === cardsInPlay[1]) {
-      console.log("You found a match!")
-    }   else {
-        console.log("Sorry, try again.")
-      }
+var reset = function () {
+  for (var i = 0; i < cards.length; i++) {
+    document.getElementsByTagName('img')[i].setAttribute('src', 'images/back.png');
   }
+  cardsInPlay = [];
+};
 
-var flipCard = function(cardId) {
-  console.log("User flipped " + cards[cardId].rank + " of " + cards[cardId].suit)
-  if (cardsInPlay.length === 2) {
-    console.log(cardImage)
-    console.log(suit)
-    checkForMatch();
+var createBoard = function() {
+  for (var i = 0; i < cards.length; i++) {
+    var cardElement = document.createElement('img');
+    cardElement.setAttribute('src', 'images/back.png');
+    cardElement.setAttribute('data-id', i);
+    cardElement.addEventListener('click' , flipCard);
+    document.getElementById('game-board').appendChild(cardElement);
   }
 }
 
-flipCard(3);
-flipCard(1);
+var checkForMatch = function() {
+    if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
+      console.log("You found a match!");
+      alert("You found a match!");
+      this.setAttribute('src' , (cards[cardId].cardImage));
+      reset();
+    }   else {
+        console.log("Sorry, try again.");
+        alert("Sorry, try again.");
+        this.setAttribute('src' , (cards[cardId].cardImage));
+        reset();
+      }
+  }
+
+var flipCard = function() {
+  var cardId = this.getAttribute('data-id');
+  cardsInPlay.push(cards[cardId]);
+  this.setAttribute('src' , (cards[cardId].cardImage));
+  console.log("User flipped " + cards[cardId].rank + " of " + cards[cardId].suit);
+  if (cardsInPlay.length === 2) {
+  }
+  checkForMatch();
+}
+
+createBoard();

@@ -30,7 +30,7 @@ h3 {
 }
 
 p {
-font-family: "droid serif";
+font-family: "Ubuntu", sans-serif;
 line-height: 26px;
 font-size: 18px;
 }
@@ -110,19 +110,3 @@ font-size: 0;
 a:hover {
   border-color: white;
 }
-
-/*Let's add some flair to the word GA in the footer. In your html, you'll notice that it's wrapped with a span that has the class name.
-
-Select .name in your style.css file and give it a color of #F15B31 and a font weight of 700.
-Finally, let's add a hover effect to the anchors in the nav.
-
-In your style.css file, give all anchors the following style: border-bottom: 2px solid transparent;
-
-Then add another, separate rule to style all anchors when the user hovers over them.
-
-When the user hovers over them, change the border color to white.
-
-Bonus:
-
-Use the nav bar items to scroll down to their respected positions on the page.
-*/
