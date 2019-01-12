@@ -44,6 +44,7 @@ var lossCounter = function() {
 var resetCards = function() {
   for (var i = 0; i < cards.length; i++) {
   document.getElementsByTagName('img')[i].setAttribute('src', 'images/back.png');
+	shuffleCards();
 }
 cardsInPlay = [];
 };
@@ -64,8 +65,8 @@ var checkForMatch = function() {
       winCounter();
       console.log("You found a match!");
       alert("You found a match!");
-    }   else {
-      lossCounter();
+    }		else {
+      	lossCounter();
         console.log("Sorry, try again.");
         alert("Sorry, try again.");
       }
