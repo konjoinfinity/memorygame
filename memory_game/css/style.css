@@ -117,3 +117,8 @@ font-size: 0;
 a:hover {
   border-color: white;
 }
+
+.board.clearfix {
+  padding-left: 150px;
+  padding-right: 150px;
+}

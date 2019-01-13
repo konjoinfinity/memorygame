@@ -18,6 +18,26 @@ cardImage: "images/king-of-hearts.png"
 rank: "king",
 suit: "diamonds",
 cardImage: "images/king-of-diamonds.png"
+},
+{
+rank: "queen",
+suit: "hearts",
+cardImage: "images/queen-of-hearts.png"
+},
+{
+rank: "queen",
+suit: "diamonds",
+cardImage: "images/queen-of-diamonds.png"
+},
+{
+rank: "king",
+suit: "hearts",
+cardImage: "images/king-of-hearts.png"
+},
+{
+rank: "king",
+suit: "diamonds",
+cardImage: "images/king-of-diamonds.png"
 }
 ];
 
@@ -44,6 +64,7 @@ var lossCounter = function() {
 var resetCards = function() {
   for (var i = 0; i < cards.length; i++) {
   document.getElementsByTagName('img')[i].setAttribute('src', 'images/back.png');
+	document.getElementById("matchmessage").innerHTML = " ";
 	shuffleCards();
 }
 cardsInPlay = [];
@@ -61,14 +82,12 @@ var createBoard = function() {
 }
 
 var checkForMatch = function() {
-    if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
-      winCounter();
-      console.log("You found a match!");
-      alert("You found a match!");
+    if (cardsInPlay[0].rank === cardsInPlay[1].rank && cardsInPlay[0].suit === cardsInPlay[1].suit) {
+			winCounter();
+			document.getElementById("matchmessage").innerHTML = "You found a match!";
     }		else {
       	lossCounter();
-        console.log("Sorry, try again.");
-        alert("Sorry, try again.");
+				document.getElementById("matchmessage").innerHTML = "Sorry, try again.";
       }
   }
 
