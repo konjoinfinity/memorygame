@@ -43,6 +43,7 @@ cardImage: "images/king-of-diamonds.png"
 
 var winLossCounter = 0;
 var cardsInPlay = []
+var cardFlipCount = 0;
 
 var shuffleCards = function() {
 	for (i = 0; i < 88; i++){
@@ -65,6 +66,7 @@ var resetCards = function() {
   for (var i = 0; i < cards.length; i++) {
   document.getElementsByTagName('img')[i].setAttribute('src', 'images/back.png');
 	document.getElementById("matchmessage").innerHTML = " ";
+	cardFlipCount = 0;
 	shuffleCards();
 }
 cardsInPlay = [];
@@ -81,26 +83,74 @@ var createBoard = function() {
   }
 }
 
-var checkForMatch = function() {
-    if (cardsInPlay[0].rank === cardsInPlay[1].rank && cardsInPlay[0].suit === cardsInPlay[1].suit) {
+var cardRankSuitMatch = function() {
+	while (cardsInPlay.length <= 4) {
+		if (cardsInPlay[0].cardImage === cardsInPlay[1].cardImage) {
 			winCounter();
 			document.getElementById("matchmessage").innerHTML = "You found a match!";
-    }		else {
-      	lossCounter();
+			console.log("You found a match!");
+			break;
+		} else {
+			if (cardsInPlay[0].cardImage === cardsInPlay[2].cardImage) {
+				winCounter();
+				document.getElementById("matchmessage").innerHTML = "You found a match!";
+				console.log("You found a match!");
+				break;
+		} else {
+				if (cardsInPlay[0].cardImage === cardsInPlay[2].cardImage) {
+					winCounter();
+					document.getElementById("matchmessage").innerHTML = "You found a match!";
+					console.log("You found a match!");
+					break;
+		} else {
+				if (cardsInPlay[0].cardImage === cardsInPlay[3].cardImage) {
+					winCounter();
+					document.getElementById("matchmessage").innerHTML = "You found a match!";
+					console.log("You found a match!");
+					break;
+		} else {
+				if (cardsInPlay[1].cardImage === cardsInPlay[2].cardImage) {
+					winCounter();
+					document.getElementById("matchmessage").innerHTML = "You found a match!";
+					console.log("You found a match!");
+					break;
+		} else {
+				if (cardsInPlay[1].cardImage === cardsInPlay[3].cardImage) {
+					winCounter();
+					document.getElementById("matchmessage").innerHTML = "You found a match!";
+					console.log("You found a match!");
+					break;
+		} else {
+				if (cardsInPlay[2].cardImage === cardsInPlay[3].cardImage) {
+					winCounter();
+					document.getElementById("matchmessage").innerHTML = "You found a match!";
+					console.log("You found a match!");
+					break;
+		} else {
+			if (cardsInPlay.length === 4){
+				lossCounter();
 				document.getElementById("matchmessage").innerHTML = "Sorry, try again.";
-      }
-  }
+				console.log("Sorry, try again.");
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 var flipCard = function() {
-  var cardId = this.getAttribute('data-id');
+	cardFlipCount += 1;
+	var cardId = this.getAttribute('data-id');
   cardsInPlay.push(cards[cardId]);
   this.setAttribute('src' , (cards[cardId].cardImage));
   console.log("User flipped " + cards[cardId].rank + " of " + cards[cardId].suit);
   if (cardsInPlay.length === 2) {
   }
-  checkForMatch();
+	cardRankSuitMatch();
 }
 
 createBoard();
-
-//test
