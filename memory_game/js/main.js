@@ -65,7 +65,7 @@ var lossCounter = function() {
 var resetCards = function() {
   for (var i = 0; i < cards.length; i++) {
   document.getElementsByTagName('img')[i].setAttribute('src', 'images/back.png');
-	document.getElementById("matchmessage").innerHTML = " ";
+	document.getElementById("matchmessage").innerHTML = "Win or Lose?";
 	cardFlipCount = 0;
 	shuffleCards();
 }
