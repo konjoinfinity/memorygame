@@ -97,7 +97,7 @@ var cardRankSuitMatch = function() {
 				console.log("You found a match!");
 				break;
 		} else {
-				if (cardsInPlay[0].cardImage === cardsInPlay[2].cardImage) {
+				if (cardsInPlay[1].cardImage === cardsInPlay[2].cardImage) {
 					winCounter();
 					document.getElementById("matchmessage").innerHTML = "You found a match!";
 					console.log("You found a match!");
@@ -109,28 +109,23 @@ var cardRankSuitMatch = function() {
 					console.log("You found a match!");
 					break;
 		} else {
-				if (cardsInPlay[1].cardImage === cardsInPlay[2].cardImage) {
-					winCounter();
-					document.getElementById("matchmessage").innerHTML = "You found a match!";
-					console.log("You found a match!");
-					break;
-		} else {
 				if (cardsInPlay[1].cardImage === cardsInPlay[3].cardImage) {
 					winCounter();
 					document.getElementById("matchmessage").innerHTML = "You found a match!";
 					console.log("You found a match!");
 					break;
 		} else {
-				if (cardsInPlay[2].cardImage === cardsInPlay[3].cardImage) {
-					winCounter();
-					document.getElementById("matchmessage").innerHTML = "You found a match!";
-					console.log("You found a match!");
-					break;
+						if (cardsInPlay[2].cardImage === cardsInPlay[3].cardImage) {
+							winCounter();
+							document.getElementById("matchmessage").innerHTML = "You found a match!";
+							console.log("You found a match!");
+							break;
 		} else {
 			if (cardsInPlay.length === 4){
 				lossCounter();
 				document.getElementById("matchmessage").innerHTML = "Sorry, try again.";
 				console.log("Sorry, try again.");
+				break;
 									}
 								}
 							}
@@ -140,7 +135,6 @@ var cardRankSuitMatch = function() {
 			}
 		}
 	}
-}
 
 var flipCard = function() {
 	cardFlipCount += 1;
